@@ -1,0 +1,20 @@
+A<!DOCTYPE html>
+<html>
+<head>
+  <title>Cloth Damage Classifier</title>
+</head>
+<body>
+  <h1>🧥 Upload Cloth Image to Predict Damage</h1>
+  <form method="POST" enctype="multipart/form-data">
+    <input type="file" name="file" required>
+    <button type="submit">Predict</button>
+  </form>
+
+  {% if damage %}
+    <h2>📷 Uploaded Image:</h2>
+    <img src="{{ url_for('uploaded_file', filename=filename) }}" height="300">
+    <h2>🧠 Predicted Damage Type: {{ damage }}</h2>
+    <p>🔧 DIY Suggestion: {{ suggestion }}</p>
+  {% endif %}
+</body>
+</html>
